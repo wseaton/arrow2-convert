@@ -12,11 +12,29 @@ repository = "https://github.com/DataEngineeringLabs/arrow2-convert"
 description = "Convert between nested rust types and Arrow with arrow2"
 
 [dependencies]
-arrow2 = "0.14.1"
 arrow2_convert_derive = { version = "0.3.2", path = "../arrow2_convert_derive", optional = true }
 chrono = { version = "0.4", default_features = false, features = ["std"] }
 err-derive = "0.3"
 trybuild = "1.0"
+
+[dependencies.arrow2]
+package = "arrow2"
+git = "https://github.com/ritchie46/arrow2"
+branch = "polars_2022-11-29"
+version = "0.14.1"
+default-features = false
+features = [
+    "compute_aggregate",
+    "compute_arithmetics",
+    "compute_boolean",
+    "compute_boolean_kleene",
+    "compute_cast",
+    "compute_comparison",
+    "compute_concatenate",
+    "compute_filter",
+    "compute_if_then_else",
+]
+
 
 [dev-dependencies]
 arrow2_convert_derive = { version = "0.3.2", path = "../arrow2_convert_derive" }
